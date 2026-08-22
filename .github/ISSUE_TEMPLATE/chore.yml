@@ -1,0 +1,37 @@
+name: Chore
+description: Create maintenance, tooling, CI, release, or housekeeping work.
+title: "[Chore] "
+labels:
+  - "type:chore"
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: |
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies / parent
+      placeholder: |
+        Parent Epic (if applicable):
+        Blocked by:
+        Blocks:

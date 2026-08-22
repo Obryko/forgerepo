@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Planning / roadmap discussion
+    url: https://github.com/Obryko/forgerepo/discussions
+    about: Discuss ideas or roadmap direction before creating implementation work.
