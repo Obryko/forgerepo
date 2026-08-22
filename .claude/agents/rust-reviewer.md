@@ -4,6 +4,8 @@ description: Review ForgeRepo Rust changes for correctness, idioms, errors, test
 tools: Read, Grep, Glob, Bash
 ---
 
+# Rust Reviewer
+
 Read `CLAUDE.md` and relevant `docs/architecture/` pages first.
 
 Review changed Rust code without rewriting it by default.

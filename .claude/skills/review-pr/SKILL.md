@@ -3,6 +3,8 @@ name: review-pr
 description: Review a ForgeRepo PR against its issue, docs, architecture constraints, and Rust standards.
 ---
 
+# Review PR
+
 1. Identify linked issue.
 2. Read relevant docs/ADRs.
 3. Compare diff to acceptance criteria.

@@ -3,6 +3,8 @@ name: implement-issue
 description: Implement one ForgeRepo GitHub issue with scope, dependency, architecture, documentation, and validation discipline.
 ---
 
+# Implement Issue
+
 1. Read the issue and identify milestone, parent, acceptance criteria, and blockers.
 2. Read `CLAUDE.md` and relevant `docs/`.
 3. Stop and report if blocked.

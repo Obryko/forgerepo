@@ -59,7 +59,7 @@ This structure is intentionally suitable for future publication as GitHub Wiki o
 
 ## Repository layout
 
-The initial workspace is expected to evolve toward:
+The current workspace contains:
 
 ```text
 crates/
@@ -72,12 +72,7 @@ fixtures/
 docs/
 ```
 
-Crate boundaries are intentional:
-
-- `forgerepo-core` owns ecosystem-neutral domain concepts and graph primitives.
-- `forgerepo-config` owns ForgeRepo configuration loading and validation.
-- `forgerepo-boundaries` owns architecture-boundary rules and evaluation.
-- `forgerepo` (the CLI crate) owns CLI argument parsing and presentation, not domain logic. It keeps the bare `forgerepo` package name, not `forgerepo-cli`, since it is the primary binary users invoke.
+Crate boundaries are intentional. See [Crate boundaries](docs/architecture/crate-boundaries.md) for the canonical rules.
 
 ## Development
 
@@ -87,7 +82,7 @@ Prerequisites:
 - Cargo
 - Git
 
-Once the workspace is initialized, the standard local checks are expected to be:
+From the repository root, run:
 
 ```bash
 cargo fmt --all -- --check
@@ -104,20 +99,7 @@ See:
 
 ## Planning model
 
-Forge projects use:
-
-```text
-Milestone
-└── Epic
-    ├── Story
-    │   └── Task(s)
-    ├── Task
-    ├── Spike
-    ├── Chore
-    └── Bug
-```
-
-A milestone normally contains multiple epics. Stories always contain implementation tasks. Parent/sub-issue hierarchy describes ownership; dependency relationships describe implementation order.
+Forge projects use a Milestone → Epic → Story/Task/Spike/Chore/Bug hierarchy. See the [roadmap model](docs/product/roadmap-model.md) for the canonical rules.
 
 ## Status
 

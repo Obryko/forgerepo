@@ -3,6 +3,8 @@ name: plan-work
 description: Plan Forge work using Milestone → Epic → Story/Task/Spike/Chore plus a separate dependency DAG.
 ---
 
+# Plan work
+
 Produce:
 
 1. Work breakdown hierarchy:

@@ -9,6 +9,14 @@ body:
       value: |
         A Story must belong to an Epic and must contain implementation Tasks.
 
+  - type: input
+    id: parent_epic
+    attributes:
+      label: Parent Epic
+      description: Link the parent Epic (issue reference or name).
+    validations:
+      required: true
+
   - type: textarea
     id: outcome
     attributes:

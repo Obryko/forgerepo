@@ -9,6 +9,14 @@ body:
       value: |
         An Epic belongs to a Milestone and normally contains Stories and/or direct Tasks, Spikes, Chores, or Bugs.
 
+  - type: input
+    id: milestone
+    attributes:
+      label: Milestone
+      description: Link the parent Milestone (issue reference or name).
+    validations:
+      required: true
+
   - type: textarea
     id: goal
     attributes:

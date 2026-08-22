@@ -109,13 +109,13 @@ docs: document forge.toml configuration (#27)
 
 ## Pull requests
 
-Every implementation PR should link its issue using a GitHub closing keyword:
+Every implementation PR should link its issue. Use a GitHub closing keyword only when the PR completes the issue:
 
 ```text
 Closes #123
 ```
 
-For partial delivery:
+For partial delivery, reference the issue without closing it:
 
 ```text
 Part of #123
