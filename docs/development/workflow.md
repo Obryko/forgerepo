@@ -55,3 +55,15 @@ Use dependency relationships to identify:
 ## Documentation
 
 Architecture/product changes update `docs/` in the same PR.
+
+## Continuous integration
+
+`.github/workflows/ci.yml` runs on every push to `main` and on every pull request, as five independent jobs:
+
+- **Formatting** — `cargo fmt --all -- --check`
+- **Clippy** — `cargo clippy --workspace --all-targets --all-features -- -D warnings`
+- **Check** — `cargo check --workspace --all-targets`
+- **Test** — `cargo test --workspace --all-targets`
+- **Build** — `cargo build --workspace`
+
+Check and Test add `--all-targets` (covering tests, examples, and benches, not just library/binary code) beyond the local [standard checks](testing.md#standard-checks); run with `--all-targets` locally to match CI exactly.
