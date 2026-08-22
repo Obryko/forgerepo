@@ -54,10 +54,11 @@ The core abstraction is the project/dependency graph, not "monorepo".
 
 ## Non-negotiable architecture
 
-- Keep `forge-core` ecosystem-neutral.
+- Keep `forgerepo-core` ecosystem-neutral.
 - Keep CLI concerns out of core.
-- Keep parsing/config concerns in `forge-config`.
-- Keep architecture-boundary evaluation in `forge-boundaries`.
+- Keep parsing/config concerns in `forgerepo-config`.
+- Keep architecture-boundary evaluation in `forgerepo-boundaries`.
+- CLI crate/package is named `forgerepo`, not `forgerepo-cli` — it is the primary user-facing binary (see [ADR 0001](docs/adr/0001-crate-naming-convention.md)).
 - Future JS/TS, Cargo, Maven, Gradle, or Go support must be adapters around the neutral model.
 - Support modular monoliths as well as monorepos.
 - Configuration must stay intentionally simple.

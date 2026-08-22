@@ -63,10 +63,10 @@ The initial workspace is expected to evolve toward:
 
 ```text
 crates/
-├── forge-cli/
-├── forge-core/
-├── forge-config/
-└── forge-boundaries/
+├── cli/         (package: forgerepo)
+├── core/        (package: forgerepo-core)
+├── config/      (package: forgerepo-config)
+└── boundaries/  (package: forgerepo-boundaries)
 
 fixtures/
 docs/
@@ -74,10 +74,10 @@ docs/
 
 Crate boundaries are intentional:
 
-- `forge-core` owns ecosystem-neutral domain concepts and graph primitives.
-- `forge-config` owns ForgeRepo configuration loading and validation.
-- `forge-boundaries` owns architecture-boundary rules and evaluation.
-- `forge-cli` owns CLI argument parsing and presentation, not domain logic.
+- `forgerepo-core` owns ecosystem-neutral domain concepts and graph primitives.
+- `forgerepo-config` owns ForgeRepo configuration loading and validation.
+- `forgerepo-boundaries` owns architecture-boundary rules and evaluation.
+- `forgerepo` (the CLI crate) owns CLI argument parsing and presentation, not domain logic. It keeps the bare `forgerepo` package name, not `forgerepo-cli`, since it is the primary binary users invoke.
 
 ## Development
 

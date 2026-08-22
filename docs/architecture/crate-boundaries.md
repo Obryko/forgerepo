@@ -4,13 +4,15 @@ The initial workspace is expected to contain:
 
 ```text
 crates/
-├── forge-cli
-├── forge-core
-├── forge-config
-└── forge-boundaries
+├── cli/         (package: forgerepo)
+├── core/        (package: forgerepo-core)
+├── config/      (package: forgerepo-config)
+└── boundaries/  (package: forgerepo-boundaries)
 ```
 
-## forge-core
+Directory names are short; package names carry the `forgerepo-*` prefix, except the CLI crate — see [ADR 0001](../adr/0001-crate-naming-convention.md).
+
+## forgerepo-core
 
 Owns:
 
@@ -24,7 +26,7 @@ Must not depend on:
 - package-manager-specific concepts;
 - boundary-specific policy.
 
-## forge-config
+## forgerepo-config
 
 Owns:
 
@@ -33,7 +35,7 @@ Owns:
 - defaults;
 - semantic configuration validation.
 
-## forge-boundaries
+## forgerepo-boundaries
 
 Owns:
 
@@ -41,7 +43,7 @@ Owns:
 - boundary evaluation;
 - violation domain objects.
 
-## forge-cli
+## forgerepo (cli)
 
 Owns:
 

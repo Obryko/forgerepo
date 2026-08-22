@@ -6,7 +6,7 @@ The Project Graph is the central abstraction. Features should build on the graph
 
 ## Ecosystem neutral core
 
-`forge-core` must not assume a specific package manager, framework, or build tool.
+`forgerepo-core` must not assume a specific package manager, framework, or build tool.
 
 ## Simple configuration
 
