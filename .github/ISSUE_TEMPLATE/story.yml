@@ -1,0 +1,46 @@
+name: Story
+description: Create a coherent capability. Every Story must have Task sub-issues.
+title: "[Story] "
+labels:
+  - "type:story"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A Story must belong to an Epic and must contain implementation Tasks.
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: |
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Required tasks
+      description: Create/link these as native sub-issues.
+      placeholder: |
+        - Task:
+        - Task:
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      placeholder: |
+        Blocked by:
+        Blocks:
+        Can run in parallel with:

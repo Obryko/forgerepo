@@ -1,0 +1,41 @@
+name: Spike
+description: Time-box research or make an architecture decision.
+title: "[Spike] "
+labels:
+  - "type:spike"
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question / decision
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+    validations:
+      required: true
+
+  - type: textarea
+    id: options
+    attributes:
+      label: Options to investigate
+
+  - type: textarea
+    id: deliverable
+    attributes:
+      label: Deliverable
+      description: Decision, ADR, prototype, benchmark, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: followup
+    attributes:
+      label: Follow-up rule
+      value: |
+        If this Spike identifies implementation work, create the resulting Story/Task in the same Epic and Milestone and link it here.
+    validations:
+      required: true

@@ -1,0 +1,55 @@
+name: Epic
+description: Create a large coherent outcome inside an existing milestone.
+title: "[Epic] "
+labels:
+  - "type:epic"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        An Epic belongs to a Milestone and normally contains Stories and/or direct Tasks, Spikes, Chores, or Bugs.
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Epic acceptance criteria
+      placeholder: |
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: children
+    attributes:
+      label: Planned child work
+      description: Convert these to native sub-issues after creation.
+      placeholder: |
+        - Story:
+        - Task:
+        - Spike:
+        - Chore:
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies / blocking graph
+      placeholder: |
+        Blocked by:
+        Blocks:
+        Parallel work:
