@@ -30,7 +30,7 @@ Closes #
 
 - [ ] No architecture boundary changes
 - [ ] Architecture change is intentional and documented
-- [ ] No ecosystem-specific concepts leaked into `forge-core`
+- [ ] No ecosystem-specific concepts leaked into `forgerepo-core`
 
 ## Review notes
 

@@ -30,12 +30,12 @@ ForgeRepo aims to answer these questions with one fast Rust binary and an ecosys
 ## Planned CLI
 
 ```bash
-forge init
-forge check
-forge graph
-forge deps <project>
-forge why <source> <target>
-forge affected --base <ref> --head <ref>
+forgerepo init
+forgerepo check
+forgerepo graph
+forgerepo deps <project>
+forgerepo why <source> <target>
+forgerepo affected --base <ref> --head <ref>
 ```
 
 ## Documentation
