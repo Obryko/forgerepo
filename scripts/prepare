@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-tools_dir=".tools"
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+repo_root="$(cd -- "${script_dir}/.." && pwd)"
+tools_dir="${repo_root}/.tools"
 
 os="$(uname -s)"
 arch="$(uname -m)"
