@@ -107,6 +107,10 @@ The project is currently pre-`0.1.0`.
 
 See the repository Issues, Milestones, and GitHub Project for the active roadmap.
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
