@@ -7,8 +7,7 @@ enum Command {
     Check,
 }
 #[derive(Parser, Debug)]
-#[command(author, version, about)]
-#[command(propagate_version = true)]
+#[command(author, version, about = "ForgeRepo repository architecture and dependency analysis tool")]
 struct Cli {
     #[command(subcommand)]
     command: Command,

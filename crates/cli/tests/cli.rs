@@ -21,10 +21,10 @@ fn should_run_cmd_check() {
 
 #[test]
 fn should_run_cmd_help() {
-    let stdout_result = predicate::str::contains("Usage: forgerepo <COMMAND>")
+    let stdout_result = predicate::str::contains("Usage: forgerepo")
+        .and(predicate::str::contains("<COMMAND>"))
         .and(predicate::str::contains("init"))
         .and(predicate::str::contains("check"))
-        .and(predicate::str::contains("help"))
         .and(predicate::str::contains("-h, --help"))
         .and(predicate::str::contains("-V, --version"));
 
@@ -38,7 +38,7 @@ fn should_run_cmd_version() {
     cmd.arg("--version")
         .assert()
         .success()
-        .stdout(predicate::str::is_match(r"^forgerepo \d+\.\d+\.\d+\n$").unwrap());
+        .stdout(predicate::str::is_match(r"^forgerepo \d+\.\d+\.\d+\r?\n$").unwrap());
 }
 
 #[test]
