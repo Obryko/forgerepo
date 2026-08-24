@@ -35,12 +35,16 @@ fn should_run_cmd_help() {
 #[test]
 fn should_run_cmd_version() {
     let mut cmd = Command::cargo_bin("forgerepo").unwrap();
-.stdout(
-    predicate::str::is_match(
-        r"^forgerepo \d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?\r?\n$",
-    )
-    .unwrap(),
-);
+    cmd.arg("--version")
+        .assert()
+        .success()
+        .stdout(
+            predicate::str::is_match(
+                r"^forgerepo \d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?\r?\n$",
+            )
+            .unwrap(),
+        );
+}
 
 #[test]
 fn should_run_cmd_unknown() {
