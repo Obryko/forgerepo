@@ -18,6 +18,27 @@ Important references:
 
 If a change materially alters architecture, update the relevant documentation and create/update an ADR.
 
+## Prepare the repository
+
+After cloning ForgeRepo, prepare the local development environment:
+
+```bash
+./scripts/prepare
+```
+The bootstrap is repository-local and does not require Lefthook or another
+development tool manager to be installed globally.
+
+It currently:
+
+detects the local platform and architecture;
+downloads the pinned Lefthook version into .tools/;
+installs the repository Git hooks.
+
+The .tools/ directory contains local tooling and is not committed to Git.
+
+The bootstrap is idempotent and can safely be run again after pulling changes
+to the development tooling.
+
 ## Work planning
 
 Forge uses this hierarchy:
@@ -122,13 +143,17 @@ Part of #123
 ```
 
 Before opening a PR:
+Local Git hooks run the common quality checks automatically. Before opening a
+PR, the complete checks can also be run manually:
 
 ```bash
 cargo fmt --all -- --check
 cargo clippy --workspace --all-targets --all-features -- -D warnings
-cargo check --workspace
-cargo test --workspace
+cargo check --workspace --all-targets
+cargo test --workspace --all-targets
+cargo build --workspace
 ```
+CI remains the final quality gate even when local hooks are skipped.
 
 ## Architecture changes
 

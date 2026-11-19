@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+repo_root="$(cd -- "${script_dir}/.." && pwd)"
+tools_dir="${repo_root}/.tools"
+
+os="$(uname -s)"
+arch="$(uname -m)"
+
+case "$os" in
+  Darwin)
+    platform="MacOS"
+    ;;
+  Linux)
+    platform="Linux"
+    ;;
+  *)
+    echo "Unsupported OS: $os" >&2
+    exit 1
+    ;;
+esac
+
+case "${platform}:${arch}" in
+  MacOS:arm64|MacOS:aarch64)
+    architecture="arm64"
+    ;;
+  MacOS:x86_64|MacOS:amd64)
+    architecture="x86_64"
+    ;;
+  Linux:arm64|Linux:aarch64)
+    architecture="aarch64"
+    ;;
+  Linux:x86_64|Linux:amd64)
+    architecture="x86_64"
+    ;;
+  *)
+    echo "Unsupported platform/architecture: ${platform}/${arch}" >&2
+    exit 1
+    ;;
+esac
+
+
+### Lefthook installation
+LEFTHOOK_VERSION="2.1.10"
+
+asset_name="lefthook_${LEFTHOOK_VERSION}_${platform}_${architecture}.gz"
+download_url="https://github.com/evilmartians/lefthook/releases/download/v${LEFTHOOK_VERSION}/${asset_name}"
+
+archive_path="${tools_dir}/lefthook.gz"
+binary_path="${tools_dir}/lefthook"
+
+mkdir -p "$tools_dir"
+
+if [[ -x "$binary_path" ]] && [[ "$("$binary_path" version)" == "$LEFTHOOK_VERSION" ]]; then
+  echo "Lefthook $LEFTHOOK_VERSION already installed."
+else
+  curl -L "$download_url" -o "$archive_path"
+  gunzip -f "$archive_path"
+  chmod +x "$binary_path"
+fi
+
+"$binary_path" install
